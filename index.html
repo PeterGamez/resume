@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Developer Resume</title>
-    
+    <title>Resume - Chanakan Keaopakdee</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome for standard icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Devicon for programming language icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Configuration & Custom Print Styles -->
     <script>
         tailwind.config = {
@@ -35,232 +37,241 @@
             }
         }
     </script>
-    
-    <style>
-        /* Base settings */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
-
-        /* Hover effects for tech pills */
-        .tech-pill {
-            transition: all 0.2s ease-in-out;
-        }
-        .tech-pill:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Print Media Styles to ensure it looks great when exported to PDF */
-        @media print {
-            body {
-                background-color: white !important;
-                margin: 0;
-                padding: 0;
-            }
-            .print-hidden {
-                display: none !important;
-            }
-            .resume-container {
-                box-shadow: none !important;
-                margin: 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                border-radius: 0 !important;
-            }
-            /* Force background colors to print */
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            /* Avoid page breaks inside sections */
-            .avoid-break {
-                page-break-inside: avoid;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen py-8 px-4 sm:px-6 lg:px-8">
 
-    <!-- Action Bar (Hidden on print) -->
-    <div class="max-w-5xl mx-auto flex justify-end mb-4 print-hidden">
-        <button onclick="window.print()" class="bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-sm transition flex items-center gap-2">
-            <i class="fa-solid fa-print"></i>
-            <span>Save as PDF / Print</span>
-        </button>
-    </div>
-
     <!-- Main Resume Container -->
-    <main class="resume-container max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
-        
-        <!-- Left Sidebar (Profile, Contact, Education, Skills) -->
+    <main
+        class="resume-container max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
+
+        <!-- Left Sidebar -->
         <aside class="w-full md:w-1/3 bg-secondary p-8 border-r border-gray-100 flex flex-col gap-8">
-            
-            <!-- Profile Section -->
-            <div class="text-center avoid-break">
-                <h1 class="text-2xl font-bold text-gray-900 md:hidden mb-1">Chanakan Keaopakdee</h1>
-                <p class="text-primary font-medium md:hidden mb-4">Senior Software Developer</p>
+
+            <!-- Profile Section (No Image) -->
+            <div class="text-center avoid-break md:hidden">
+                <h1 class="text-2xl font-bold text-gray-900 mb-1">Chanakan Keaopakdee</h1>
+                <p class="text-primary font-medium text-sm">Computer Engineering Student</p>
             </div>
 
             <!-- Contact Section -->
             <div class="avoid-break">
-                <h2 class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">Contact</h2>
+                <h2
+                    class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">
+                    Contact</h2>
                 <ul class="flex flex-col gap-3 text-sm text-gray-600">
                     <li class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
-                        <a href="mailto:johndoe@example.com" class="hover:text-primary transition break-all" id="email-text">johndoe@example.com</a>
-                        <button onclick="copyEmail()" class="text-gray-400 hover:text-primary print-hidden ml-auto" title="Copy Email">
-                            <i class="fa-regular fa-copy"></i>
-                        </button>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
-                            <i class="fa-solid fa-phone"></i>
+                        <div class="flex flex-col">
+                            <a href="mailto:chanakan.kea@gmail.com"
+                                class="hover:text-primary transition break-all">chanakan.kea@gmail.com</a>
+                            <a href="mailto:me@alltime.in.th"
+                                class="hover:text-primary transition break-all text-xs text-gray-500">me@alltime.in.th</a>
                         </div>
-                        <span>+66 81 234 5678</span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <span>Bangkok, Thailand</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </div>
-                        <a href="#" class="hover:text-primary transition">linkedin.com/in/johndoe</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
                             <i class="fa-brands fa-github"></i>
                         </div>
-                        <a href="#" class="hover:text-primary transition">github.com/johndoe</a>
+                        <a href="https://github.com/PeterGamez" target="_blank"
+                            class="hover:text-primary transition">github.com/PeterGamez</a>
                     </li>
+                    <li class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <a href="https://facebook.com/real.petergamez" target="_blank"
+                            class="hover:text-primary transition">real.petergamez</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-primary flex-shrink-0">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <a href="https://discord.com/users/1048975088902484088" target="_blank"
+                            class="hover:text-primary transition">PeterGamez</a>
+                    </li>
+
                 </ul>
             </div>
 
             <!-- Education Section -->
             <div class="avoid-break">
-                <h2 class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">Education</h2>
-                <div class="mb-4">
-                    <h3 class="font-semibold text-gray-800">B.S. Computer Engineering</h3>
-                    <p class="text-sm text-gray-500 mb-1">Chulalongkorn University</p>
-                    <p class="text-xs text-gray-400 font-medium bg-gray-100 inline-block px-2 py-1 rounded">2016 - 2020</p>
-                </div>
-            </div>
+                <h2
+                    class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">
+                    Education</h2>
 
-            <!-- Skills Section -->
-            <div class="avoid-break flex-grow">
-                <h2 class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">Tech Stack</h2>
-                
                 <div class="mb-4">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Frontend</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-react-original colored text-lg"></i> React
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-nextjs-original colored text-lg"></i> Next.js
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-typescript-plain colored text-lg"></i> TypeScript
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-tailwindcss-original colored text-lg"></i> Tailwind
-                        </span>
-                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm">B.Eng. Computer Engineering</h3>
+                    <p class="text-sm text-gray-500 mb-1">Kasetsart University, Sriracha Campus</p>
+                    <p class="text-xs text-gray-400 font-medium bg-gray-100 inline-block px-2 py-1 rounded">Jun 2024 -
+                        Present</p>
                 </div>
 
                 <div class="mb-4">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Backend</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-nodejs-plain colored text-lg"></i> Node.js
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-python-plain colored text-lg"></i> Python
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-postgresql-plain colored text-lg"></i> PostgreSQL
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-mongodb-plain colored text-lg"></i> MongoDB
-                        </span>
-                    </div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Vocational Certificate</h3>
+                    <p class="text-sm text-gray-500 mb-1">Suratthani Vocational College</p>
+                    <p class="text-xs text-gray-400 font-medium bg-gray-100 inline-block px-2 py-1 rounded">May 2021 -
+                        Mar 2024</p>
                 </div>
 
-                <div>
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3">DevOps & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-docker-plain colored text-lg"></i> Docker
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-amazonwebservices-original colored text-lg"></i> AWS
-                        </span>
-                        <span class="tech-pill bg-white border border-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md flex items-center gap-1.5">
-                            <i class="devicon-git-plain colored text-lg"></i> Git
-                        </span>
+
+            </div>
+
+            <!-- Highlight Skills Section -->
+            <div class="avoid-break">
+                <h2
+                    class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">
+                    Core Skills</h2>
+                <div class="flex flex-wrap gap-1.5">
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-typescript-plain colored"></i> TypeScript</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-nodejs-plain colored"></i> Node.js</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg"
+                            class="w-3 h-3 object-contain" /> Bun</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-mysql-plain colored"></i> MySQL</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-mariadb-plain colored"></i> MariaDB</span>
+                    <span
+                        class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                            class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                </div>
+            </div>
+
+            <!-- Technical Skills Detail Section -->
+            <div class="avoid-break">
+                <h2
+                    class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">
+                    Technical Skills
+                </h2>
+
+                <div class="flex flex-col gap-5">
+                    <div>
+                        <h3 class="text-sm font-bold text-gray-700 mb-2 border-b pb-1">Programming / Web</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-javascript-plain colored"></i> JavaScript</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-typescript-plain colored"></i> TypeScript</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-nodejs-plain colored"></i> Node.js</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg"
+                                    class="w-3 h-3 object-contain" /> Bun</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-php-plain colored"></i> PHP</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-html5-plain colored"></i> HTML</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-css3-plain colored"></i> CSS</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                    class="w-3 h-3 object-contain" /> Python</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-laravel-plain colored"></i> Laravel</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-gray-700 mb-2 border-b pb-1">Database</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-mysql-plain colored"></i> MySQL</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-mariadb-plain colored"></i> MariaDB</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+                                    class="w-3 h-3 object-contain" /> SQLite</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-redis-plain colored"></i> Redis</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-firebase-plain colored"></i> Firebase</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-gray-700 mb-2 border-b pb-1">Tools & Software</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-vscode-plain colored"></i> VS Code</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-visualstudio-plain colored"></i> VS Community</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-phpstorm-plain colored"></i> PhpStorm</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="images/antigravity.png" alt="Antigravity IDE" class="w-3 h-3 object-contain">
+                                Antigravity IDE</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-git-plain colored"></i> Git</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-github-original colored"></i> GitHub</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="images/office.png" alt="Microsoft Office" class="w-3 h-3 object-contain">
+                                Microsoft Office</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><img
+                                    src="images/adobe.png" alt="Adobe Suite" class="w-3 h-3 object-contain"> Adobe
+                                Suite</span>
+                            <span
+                                class="tech-pill bg-gray-50 border border-gray-200 text-gray-700 text-[11px] px-2 py-1 rounded flex items-center gap-1.5"><i
+                                    class="devicon-canva-original colored"></i> Canva</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Language Section -->
-            <div class="avoid-break mt-auto">
-                 <h2 class="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-4 uppercase tracking-wider text-sm">Languages</h2>
-                 <ul class="text-sm text-gray-600 flex flex-col gap-2">
-                     <li class="flex justify-between items-center">
-                         <span>Thai</span>
-                         <span class="text-xs font-semibold text-primary bg-blue-50 px-2 py-1 rounded">Native</span>
-                     </li>
-                     <li class="flex justify-between items-center">
-                         <span>English</span>
-                         <span class="text-xs font-semibold text-gray-600 bg-gray-200 px-2 py-1 rounded">Professional</span>
-                     </li>
-                 </ul>
-            </div>
+
         </aside>
 
         <!-- Right Main Content -->
         <div class="w-full md:w-2/3 p-8 lg:p-12 flex flex-col gap-10">
-            
-            <!-- Header Section (Visible mainly on Desktop) -->
-            <header class="hidden md:block border-b border-gray-100 pb-6">
-                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-2">Chanakan Keaopakdee</h1>
-                <p class="text-xl text-primary font-medium">Senior Full-Stack Developer</p>
-            </header>
 
-            <!-- Summary Section -->
-            <section class="avoid-break">
-                <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <div class="w-8 h-8 rounded bg-blue-50 text-primary flex items-center justify-center text-sm">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    Profile Summary
-                </h2>
-                <p class="text-gray-600 leading-relaxed text-sm lg:text-base">
-                    Results-driven Software Developer with over 5 years of experience in designing, developing, and deploying scalable web applications. Proficient in modern JavaScript ecosystems (React, Node.js) and cloud infrastructure. Passionate about writing clean, maintainable code, optimizing system performance, and mentoring junior developers to build high-performing agile teams.
-                </p>
-            </section>
+            <!-- Header Section (Desktop) -->
+            <header class="hidden md:block border-b border-gray-100 pb-6">
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-2">Chanakan Keaopakdee
+                </h1>
+                <p class="text-xl text-primary font-medium mt-2">Computer Engineering Student</p>
+                <p class="text-gray-500 text-sm mt-1">Kasetsart University, Sriracha Campus</p>
+            </header>
 
             <!-- Experience Section -->
             <section>
@@ -270,44 +281,46 @@
                     </div>
                     Work Experience
                 </h2>
-                
-                <!-- Timeline Container -->
+
                 <div class="relative border-l-2 border-blue-100 ml-3 md:ml-4 space-y-8">
-                    
-                    <!-- Job 1 -->
+
                     <article class="relative pl-6 md:pl-8 avoid-break">
-                        <!-- Timeline Dot -->
-                        <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1.5 border-4 border-white shadow-sm"></div>
-                        
-                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                            <h3 class="text-lg font-bold text-gray-900">Senior Software Developer</h3>
-                            <span class="text-sm font-medium text-primary bg-blue-50 px-3 py-1 rounded-full w-max mt-2 sm:mt-0">Jan 2023 - Present</span>
+                        <div
+                            class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1.5 border-4 border-white shadow-sm">
                         </div>
-                        <p class="text-sm font-semibold text-gray-700 mb-3">TechNova Solutions Co., Ltd. <span class="text-gray-400 font-normal">| Bangkok</span></p>
-                        
+
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-gray-900">Internship</h3>
+                            <span
+                                class="text-sm font-medium text-primary bg-blue-50 px-3 py-1 rounded-full w-max mt-2 sm:mt-0">Mar
+                                2023 - May 2023</span>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-700 mb-3">Academic Resource and Information Technology
+                            Center<span class="text-gray-400 font-normal">| Suratthani Rajabhat University</span></p>
+
                         <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-2 leading-relaxed">
-                            <li>Spearheaded the migration of a legacy monolithic application to a microservices architecture using Node.js and Docker, improving system deployment speed by 40%.</li>
-                            <li>Designed and implemented highly available RESTful APIs supporting 1M+ daily active users on AWS (EC2, S3, RDS).</li>
-                            <li>Mentored a team of 4 junior developers through code reviews and pair programming, significantly reducing bug rates by 25% in production.</li>
-                            <li>Optimized frontend React rendering logic, decreasing initial page load time from 3.2s to 1.5s.</li>
+                            <li>Developed an organizational workflow management system.</li>
+                            <li>Developed the President's Direct Line communication system.</li>
                         </ul>
                     </article>
 
-                    <!-- Job 2 -->
                     <article class="relative pl-6 md:pl-8 avoid-break">
-                        <div class="absolute w-4 h-4 bg-gray-300 rounded-full -left-[9px] top-1.5 border-4 border-white shadow-sm"></div>
-                        
-                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                            <h3 class="text-lg font-bold text-gray-900">Full Stack Developer</h3>
-                            <span class="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 sm:mt-0">Jun 2020 - Dec 2022</span>
+                        <div
+                            class="absolute w-4 h-4 bg-gray-300 rounded-full -left-[9px] top-1.5 border-4 border-white shadow-sm">
                         </div>
-                        <p class="text-sm font-semibold text-gray-700 mb-3">NextGen Web Agency <span class="text-gray-400 font-normal">| Remote</span></p>
-                        
+
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+                            <h3 class="text-lg font-bold text-gray-900">Internship</h3>
+                            <span
+                                class="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full w-max mt-2 sm:mt-0">Jun
+                                2022 - Jul 2022</span>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-700 mb-3">Science Department <span
+                                class="text-gray-400 font-normal">| Suratthani Vocational College</span></p>
+
                         <ul class="list-disc list-outside ml-4 text-sm text-gray-600 space-y-2 leading-relaxed">
-                            <li>Developed and maintained 15+ custom web applications for enterprise clients using React, TypeScript, and Express.</li>
-                            <li>Integrated third-party payment gateways (Stripe, PayPal) facilitating over $500K in secure monthly transactions.</li>
-                            <li>Implemented CI/CD pipelines using GitHub Actions, automating testing and deployment processes which reduced release time by 50%.</li>
-                            <li>Collaborated closely with UX/UI designers to translate Figma mockups into pixel-perfect, responsive web components.</li>
+                            <li>Managed and maintained computer hardware and equipment.</li>
+                            <li>Developed and deployed the official website for the Science Department.</li>
                         </ul>
                     </article>
 
@@ -315,95 +328,163 @@
             </section>
 
             <!-- Projects Section -->
-            <section class="avoid-break">
+            <section class="avoid-break mt-4">
                 <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                     <div class="w-8 h-8 rounded bg-blue-50 text-primary flex items-center justify-center text-sm">
-                        <i class="fa-solid fa-code-branch"></i>
+                        <i class="fa-solid fa-folder-open"></i>
                     </div>
-                    Notable Projects
+                    Projects
                 </h2>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    
-                    <!-- Project 1 -->
-                    <div class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-gray-900">E-Commerce Dashboard</h3>
-                            <a href="#" class="text-gray-400 hover:text-primary print-hidden"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                            A comprehensive admin dashboard for managing inventory, sales tracking, and user analytics with real-time data visualization.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded">React</span>
-                            <span class="text-[10px] font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded">Redux</span>
-                            <span class="text-[10px] font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded">Chart.js</span>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- All Time Project -->
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50 flex flex-col h-full">
+                        <h3 class="font-bold text-gray-900 text-sm">
+                            <a href="https://www.alltime.in.th/" target="_blank"
+                                class="hover:text-primary transition flex items-center gap-1.5">
+                                All Time (Website & Bot) <i
+                                    class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </h3>
+                        <ul class="list-disc list-inside text-xs text-gray-600 mt-2 mb-3 flex-grow space-y-1">
+                            <li>Designed and developed the main web platform.</li>
+                            <li>Developed an automated bot application for system management.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1 mt-auto">
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-php-plain colored"></i> PHP</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg"
+                                    class="w-3 h-3 object-contain" /> Bun</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-typescript-plain colored"></i> TypeScript</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-mariadb-plain colored"></i> MariaDB</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+                                    class="w-3 h-3 object-contain" /> SQLite</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-redis-plain colored"></i> Redis</span>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-gray-900">TaskFlow API</h3>
-                            <a href="#" class="text-gray-400 hover:text-primary print-hidden"><i class="fa-brands fa-github"></i></a>
+                    <!-- Blackjack Project -->
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50 flex flex-col h-full">
+                        <h3 class="font-bold text-gray-900 text-sm">
+                            <a href="https://github.com/PeterGamez/Blackjack" target="_blank"
+                                class="hover:text-primary transition flex items-center gap-1.5">
+                                Blackjack Game <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </h3>
+                        <ul class="list-disc list-inside text-xs text-gray-600 mt-2 mb-3 flex-grow space-y-1">
+                            <li>Developed a multiplayer Blackjack card game.</li>
+                            <li>Implemented real-time features and game logic.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-1 mt-auto">
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-typescript-plain colored"></i> TypeScript</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+                                    class="w-3 h-3 object-contain" /> Next.js</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-mariadb-plain colored"></i> MariaDB</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-redis-plain colored"></i> Redis</span>
+                            <span
+                                class="bg-gray-50 text-gray-700 border border-gray-200 text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1"><i
+                                    class="devicon-socketio-original colored"></i> Socket.io</span>
                         </div>
-                        <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                            An open-source REST API for task management featuring JWT authentication, role-based access control, and automated email notifications.
+                    </div>
+                </div>
+
+                <div class="mt-4 text-right">
+                    <a href="https://github.com/PeterGamez" target="_blank"
+                        class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-primary transition-colors">
+                        <i class="devicon-github-original colored text-base"></i>
+                        <span>View more projects on GitHub</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] ml-0.5"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Projects & Achievements Section -->
+            <section class="avoid-break">
+                <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded bg-blue-50 text-primary flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    Achievements
+                </h2>
+
+                <div class="grid grid-cols-1 gap-4">
+
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
+                        <h3 class="font-bold text-gray-900 text-sm">29th National WorldSkills Thailand</h3>
+                        <p class="text-xs text-gray-600 mt-1 mb-2">Web Technology & Web Design</p>
+                        <ul class="list-disc list-inside text-xs text-gray-500 space-y-1">
+                            <li>National Level Participant (May 2023)</li>
+                            <li><span class="text-gray-700 font-medium">Silver Medal (2nd Place)</span> - Regional
+                                Level, Southern Region (August 2022)</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
+                        <h3 class="font-bold text-gray-900 text-sm">ICDL The Digital Skills Standard (August 2022)</h3>
+                        <p class="text-xs text-gray-600 mt-1 mb-2">Business Track (High School & Vocational)</p>
+                        <ul class="list-disc list-inside text-xs text-gray-500 space-y-1">
+                            <li><span class="text-yellow-600 font-medium">Bronze Medal</span> - International Level</li>
+                        </ul>
+                    </div>
+
+
+
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
+                        <h3 class="font-bold text-gray-900 text-sm">Thailand-China Mobile App Development Competition
+                            (June
+                            2022)</h3>
+                        <ul class="list-disc list-inside text-xs text-gray-500 mt-2 space-y-1">
+                            <li><span class="text-yellow-600 font-medium">Gold Medal (6th Place)</span> - International
+                                Level</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-md transition bg-gray-50/50">
+                        <h3 class="font-bold text-gray-900 text-sm">New Gen Inventors Competition (2022)</h3>
+                        <p class="text-xs text-gray-600 mt-1 mb-2">Software Innovation: School Botanical Garden Database
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-semibold text-green-700 bg-green-100 px-2 py-1 rounded">Node.js</span>
-                            <span class="text-[10px] font-semibold text-green-700 bg-green-100 px-2 py-1 rounded">MongoDB</span>
-                            <span class="text-[10px] font-semibold text-green-700 bg-green-100 px-2 py-1 rounded">Jest</span>
-                        </div>
+                        <ul class="list-disc list-inside text-xs text-gray-500 space-y-1">
+                            <li><span class="text-gray-700 font-medium">2nd Runner-up</span> - National Level</li>
+                            <li><span class="text-yellow-600 font-medium">Winner (1st Place)</span> - Regional Level
+                            </li>
+                            <li><span class="text-gray-700 font-medium">1st Runner-up</span> - Provincial Level</li>
+                        </ul>
                     </div>
 
                 </div>
             </section>
-            
+
+
+
         </div>
     </main>
 
-    <!-- Interactive Scripts -->
-    <script>
-        // Copy email to clipboard function
-        function copyEmail() {
-            const emailText = document.getElementById('email-text').innerText;
-            
-            // Create a temporary textarea element to copy from
-            const tempTextArea = document.createElement("textarea");
-            tempTextArea.value = emailText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            
-            try {
-                // Execute copy command
-                document.execCommand('copy');
-                
-                // Visual feedback (Temporary change button icon)
-                const btn = event.currentTarget;
-                const icon = btn.querySelector('i');
-                const originalClass = icon.className;
-                
-                icon.className = 'fa-solid fa-check text-green-500';
-                
-                // Show a quick notification style message
-                const notification = document.createElement('div');
-                notification.innerText = "Email copied to clipboard!";
-                notification.className = "fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded shadow-lg text-sm z-50 transition-opacity duration-300";
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    icon.className = originalClass;
-                    notification.style.opacity = '0';
-                    setTimeout(() => notification.remove(), 300);
-                }, 2000);
-                
-            } catch (err) {
-                console.error('Failed to copy text', err);
-            }
-            
-            document.body.removeChild(tempTextArea);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
