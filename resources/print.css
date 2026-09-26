@@ -1,0 +1,76 @@
+/* Print Media */
+@media print {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .tilt-card {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .page-loader {
+        display: none !important;
+    }
+
+    @page {
+        margin: 1cm 0;
+    }
+
+    body {
+        background-color: var(--color-white) !important;
+        padding: 0;
+    }
+
+    .resume-container {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        flex-direction: row;
+    }
+
+    .resume-sidebar {
+        width: 35%;
+        padding: 1.5rem;
+        border-right: 1px solid var(--color-gray-200);
+    }
+
+    .resume-main {
+        width: 65%;
+        padding: 1.5rem;
+    }
+
+    .header-desktop {
+        display: block;
+    }
+
+    .profile-mobile {
+        display: none;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .avoid-break,
+    article,
+    .card-grid>div,
+    .card-grid-1>div,
+    .edu-item {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+}
