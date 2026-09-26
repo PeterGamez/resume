@@ -1,3 +1,13 @@
+window.addEventListener('load', () => {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 700);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Scroll Reveal Animation
