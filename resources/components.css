@@ -146,10 +146,6 @@
     object-fit: contain;
 }
 
-.tech-pill i.text-red {
-    color: #FF0000;
-}
-
 .header-desktop {
     display: none;
     border-bottom: 1px solid var(--color-gray-100);
